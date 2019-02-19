@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//post list
+Route::get('/posts', 'App\Http\Controllers\PostController@index');
+// post
+Route::get('/posts/{post}', 'App\Http\Controllers\PostController@show');
+// create post
+Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
+Route::post('/posts', 'App\Http\Controllers\PostController@store');
+// edit
+Route::get('/posts/{post}/edit', 'App\Http\Controllers\PostController@edit');
+Route::post('/posts/{post}', 'App\Http\Controllers\PostController@update');
+//delete
+Route::get('/posts/delete', 'App\Http\Controllers\PostController@delete');
+
+
